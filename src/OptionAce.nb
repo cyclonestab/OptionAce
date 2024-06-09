@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13428,        389]
-NotebookOptionsPosition[     11404,        349]
-NotebookOutlinePosition[     11818,        365]
-CellTagsIndexPosition[     11775,        362]
+NotebookDataLength[     20449,        568]
+NotebookOptionsPosition[     17450,        516]
+NotebookOutlinePosition[     17862,        532]
+CellTagsIndexPosition[     17819,        529]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -164,10 +164,177 @@ Cell["Pricing of Strategies", "Section",
 
 Cell[CellGroupData[{
 
+Cell["Synthetic Long Forward Position", "Subsection",
+ CellChangeTimes->{{3.926827397031208*^9, 3.926827402298769*^9}, {
+  3.926882083518036*^9, 3.926882087313179*^9}, {3.9268824877196655`*^9, 
+  3.926882490134388*^9}},ExpressionUUID->"f8bf59b7-595f-934e-98df-\
+f844c5b3fd89"],
+
+Cell["\<\
+The combination of a long call and a short put with identical strike price \
+and expiration, traded at the same time on the same underlying, is equivalent \
+to a synthetic long forward position. \
+\>", "Text",
+ CellChangeTimes->{{3.926882355923588*^9, 
+  3.9268823616788616`*^9}},ExpressionUUID->"83963c5b-23c7-9b4a-a7a7-\
+471f9f8dc675"],
+
+Cell[TextData[{
+ "The profit pattern ",
+ Cell[BoxData[
+  FormBox["\[CapitalPi]", TraditionalForm]],ExpressionUUID->
+  "aebff407-7c21-b048-aa8b-d84183c708d6"],
+ " of a synthetic long forward position at expiration is given by"
+}], "Text",
+ CellChangeTimes->{{3.926827409656533*^9, 3.926827458227665*^9}, {
+  3.926827596709144*^9, 3.926827603317816*^9}, {3.9268824719197216`*^9, 
+  3.9268825009429913`*^9}},ExpressionUUID->"a0e66df1-a982-8b47-a4cd-\
+5d3e18acf8e8"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     SubscriptBox[GridBox[{
+        {
+         RowBox[{
+          SubscriptBox["\[CapitalPi]", "call"], "=", 
+          RowBox[{
+           RowBox[{"max", "(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["S", "T"], "-", "X"}], ",", "0"}], ")"}], "-", 
+           "C"}]}]}
+       },
+       GridBoxAlignment->{"Columns" -> {{"Center"}}}], "call"]}
+   },
+   GridBoxItemSize->{"Columns" -> {{
+        Scaled[0.96]}}}], 
+  TraditionalForm]],ExpressionUUID->"b4830ddc-622f-c44b-a431-8a514bb530fe"]], \
+"Text",
+ CellChangeTimes->{
+  3.926882457865116*^9, {3.9268825113033276`*^9, 3.926882528913103*^9}, {
+   3.92688258499078*^9, 3.926882587338373*^9}, {3.926883380700531*^9, 
+   3.9268833832770634`*^9}, {3.926883516748667*^9, 3.9268835211394424`*^9}, {
+   3.926884108546154*^9, 3.9268841089375687`*^9}, {3.9268844198486233`*^9, 
+   3.9268844459910717`*^9}, {3.926884558885704*^9, 
+   3.926884564319128*^9}},ExpressionUUID->"891612d4-b8c1-f840-abd8-\
+33ebb0a57a54"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     SubscriptBox[GridBox[{
+        {
+         RowBox[{
+          SubscriptBox["\[CapitalPi]", "put"], "=", 
+          RowBox[{
+           RowBox[{"max", "(", 
+            RowBox[{
+             RowBox[{"X", "-", 
+              SubscriptBox["S", "T"]}], ",", "0"}], ")"}], "-", "C"}]}]}
+       },
+       GridBoxAlignment->{"Columns" -> {{"Center"}}}], "put"]}
+   },
+   GridBoxItemSize->{"Columns" -> {{
+        Scaled[0.96]}}}], 
+  TraditionalForm]],ExpressionUUID->"501037d3-a194-384e-83cf-66fa5035dd95"]], \
+"Text",
+ CellChangeTimes->{
+  3.926882457865116*^9, {3.9268825113033276`*^9, 3.926882528913103*^9}, {
+   3.92688258499078*^9, 3.926882587338373*^9}, {3.926883380700531*^9, 
+   3.9268833832770634`*^9}, {3.926883439500124*^9, 3.9268834611246586`*^9}, {
+   3.9268835646605377`*^9, 3.9268835891330376`*^9}, {3.92688361989097*^9, 
+   3.926883635948807*^9}, {3.9268841122181797`*^9, 3.926884112617546*^9}, {
+   3.9268844231043053`*^9, 3.9268844481358376`*^9}, {3.9268845609097996`*^9, 
+   3.9268845654220963`*^9}},ExpressionUUID->"43fd5a4d-979c-3c49-ad13-\
+130d4a2d3e0a"],
+
+Cell[TextData[{
+ "the subtraction of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPi]", "call"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8d52f67b-5562-ef44-8835-d603cd2d13bf"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPi]", "put"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e7cc12d1-7a4f-da44-8e27-dfb1f6a836c1"]
+}], "Text",
+ CellChangeTimes->{{3.926884581552967*^9, 
+  3.9268846143111496`*^9}},ExpressionUUID->"c27c9bf9-7b03-8d4e-9eef-\
+f1b83ff75f2d"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{GridBox[{
+        {
+         RowBox[{"\[CapitalPi]", "=", 
+          RowBox[{
+           SubscriptBox["S", "T"], "-", "X", "-", "C"}]}]}
+       },
+       GridBoxAlignment->{"Columns" -> {{"Center"}}}], "."}]}
+   },
+   GridBoxItemSize->{"Columns" -> {{
+        Scaled[0.96]}}}], 
+  TraditionalForm]],ExpressionUUID->"5ac5055d-663e-b04c-89c9-8a85548cfd6e"]], \
+"Text",
+ CellChangeTimes->{
+  3.926882457865116*^9, {3.9268825113033276`*^9, 3.926882528913103*^9}, {
+   3.92688258499078*^9, 3.926882587338373*^9}, {3.926883380700531*^9, 
+   3.9268833832770634`*^9}, {3.926883439500124*^9, 3.9268834611246586`*^9}, {
+   3.9268835646605377`*^9, 3.9268835891330376`*^9}, {3.92688361989097*^9, 
+   3.926883635948807*^9}, {3.9268841122181797`*^9, 3.926884112617546*^9}, {
+   3.926884306176054*^9, 
+   3.9268843105791683`*^9}},ExpressionUUID->"50dc6569-9ca6-b040-9f80-\
+0d6519030904"],
+
+Cell["in Wolfram language", "Text",
+ CellChangeTimes->{{3.9268285103621273`*^9, 
+  3.926828518839969*^9}},ExpressionUUID->"f100d8ef-6eae-7447-b74e-\
+c101145bdd71"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"syntheticLongProfit", "[", 
+   RowBox[{
+    SubscriptBox["S", "T"], ",", "X", ",", "c"}], "]"}], ":=", 
+  RowBox[{
+   SubscriptBox["S", "T"], "-", "X", "-", "c"}]}]], "Input",
+ CellChangeTimes->{{3.9268847499874744`*^9, 3.926884786272461*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"ab5bc8cd-46a3-2747-8e2e-988c25b1138e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Bull Spread", "Subsection",
  CellChangeTimes->{{3.926827397031208*^9, 
   3.926827402298769*^9}},ExpressionUUID->"f7958647-b9dc-794d-b34e-\
 c7458616247e"],
+
+Cell[TextData[{
+ "A bull spread is constructed by buying a call option with a lower strike \
+price ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "L"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cccce1ea-2dcc-e648-8011-3300252817eb"],
+ ", and selling another call option with a higher strike price ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "H"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2349ad80-f915-164f-9179-9bd52389c1c0"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.9268821340072384`*^9, 3.926882137537466*^9}, {
+  3.9268822445204773`*^9, 3.926882250871811*^9}, {3.9268822862003975`*^9, 
+  3.926882320928316*^9}},ExpressionUUID->"b898d259-97fb-8546-ad5d-\
+09e1eea90edb"],
 
 Cell[TextData[{
  "The profit pattern ",
@@ -348,7 +515,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{648.75, 655.5},
-WindowMargins->{{385.5, Automatic}, {Automatic, 29.625}},
+WindowMargins->{{384, Automatic}, {Automatic, 36.375}},
 FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"13bc50ca-62aa-7f4b-9689-249a358dd060"
@@ -379,15 +546,27 @@ Cell[3582, 117, 1281, 37, 58, "Text",ExpressionUUID->"2a037068-492b-7241-ba26-3d
 Cell[CellGroupData[{
 Cell[4900, 159, 170, 3, 67, "Section",ExpressionUUID->"cbb93933-227a-6c45-b5a2-051082514ffb"],
 Cell[CellGroupData[{
-Cell[5095, 166, 159, 3, 54, "Subsection",ExpressionUUID->"f7958647-b9dc-794d-b34e-c7458616247e"],
-Cell[5257, 171, 427, 11, 35, "Text",ExpressionUUID->"d3fbfa8d-ca31-144a-9036-de5aad511fdf"],
-Cell[5687, 184, 1039, 28, 33, "Text",ExpressionUUID->"912ad1bc-c235-1f46-8d4e-078e9f454eb5"],
-Cell[6729, 214, 149, 3, 35, "Text",ExpressionUUID->"5c0350d0-0f86-d449-aa74-d84db3b7d8d9"],
-Cell[6881, 219, 672, 19, 33, "Text",ExpressionUUID->"e6665991-5691-8a4b-ad91-98e218d91ea1"],
-Cell[7556, 240, 171, 3, 35, "Text",ExpressionUUID->"8276d289-be98-aa4c-8e70-51a57193cccf"],
-Cell[7730, 245, 2655, 71, 70, "Text",ExpressionUUID->"a42fec8e-d18b-ea43-9201-eb589cd16e79"],
-Cell[10388, 318, 165, 3, 35, "Text",ExpressionUUID->"f6cf7097-8cdf-0f4c-8076-80da34e5d8ee"],
-Cell[10556, 323, 808, 21, 58, "Input",ExpressionUUID->"8f96051b-daa5-d54b-b6e2-b46ba8916e3c"]
+Cell[5095, 166, 276, 4, 54, "Subsection",ExpressionUUID->"f8bf59b7-595f-934e-98df-f844c5b3fd89"],
+Cell[5374, 172, 347, 7, 81, "Text",ExpressionUUID->"83963c5b-23c7-9b4a-a7a7-471f9f8dc675"],
+Cell[5724, 181, 462, 10, 35, "Text",ExpressionUUID->"a0e66df1-a982-8b47-a4cd-5d3e18acf8e8"],
+Cell[6189, 193, 1038, 27, 33, "Text",ExpressionUUID->"891612d4-b8c1-f840-abd8-33ebb0a57a54"],
+Cell[7230, 222, 1127, 27, 36, "Text",ExpressionUUID->"43fd5a4d-979c-3c49-ad13-130d4a2d3e0a"],
+Cell[8360, 251, 539, 16, 35, "Text",ExpressionUUID->"c27c9bf9-7b03-8d4e-9eef-f1b83ff75f2d"],
+Cell[8902, 269, 938, 23, 33, "Text",ExpressionUUID->"50dc6569-9ca6-b040-9f80-0d6519030904"],
+Cell[9843, 294, 163, 3, 35, "Text",ExpressionUUID->"f100d8ef-6eae-7447-b74e-c101145bdd71"],
+Cell[10009, 299, 356, 8, 28, "Input",ExpressionUUID->"ab5bc8cd-46a3-2747-8e2e-988c25b1138e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10402, 312, 159, 3, 54, "Subsection",ExpressionUUID->"f7958647-b9dc-794d-b34e-c7458616247e"],
+Cell[10564, 317, 736, 19, 58, "Text",ExpressionUUID->"b898d259-97fb-8546-ad5d-09e1eea90edb"],
+Cell[11303, 338, 427, 11, 35, "Text",ExpressionUUID->"d3fbfa8d-ca31-144a-9036-de5aad511fdf"],
+Cell[11733, 351, 1039, 28, 33, "Text",ExpressionUUID->"912ad1bc-c235-1f46-8d4e-078e9f454eb5"],
+Cell[12775, 381, 149, 3, 35, "Text",ExpressionUUID->"5c0350d0-0f86-d449-aa74-d84db3b7d8d9"],
+Cell[12927, 386, 672, 19, 33, "Text",ExpressionUUID->"e6665991-5691-8a4b-ad91-98e218d91ea1"],
+Cell[13602, 407, 171, 3, 35, "Text",ExpressionUUID->"8276d289-be98-aa4c-8e70-51a57193cccf"],
+Cell[13776, 412, 2655, 71, 70, "Text",ExpressionUUID->"a42fec8e-d18b-ea43-9201-eb589cd16e79"],
+Cell[16434, 485, 165, 3, 35, "Text",ExpressionUUID->"f6cf7097-8cdf-0f4c-8076-80da34e5d8ee"],
+Cell[16602, 490, 808, 21, 28, "Input",ExpressionUUID->"8f96051b-daa5-d54b-b6e2-b46ba8916e3c"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
